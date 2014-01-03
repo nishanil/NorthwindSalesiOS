@@ -23,9 +23,7 @@ namespace NorthwindSalesiOS
 		{
 			Title = "Northwind Sales Dashboard";
 			EdgesForExtendedLayout = UIRectEdge.None;
-
 			var fetchDataButton = new UIBarButtonItem ("Fetch Data", UIBarButtonItemStyle.Plain, OnFetchDataTap);
-
 			NavigationItem.SetRightBarButtonItem (fetchDataButton, false);	
 		}
 
@@ -33,7 +31,7 @@ namespace NorthwindSalesiOS
 
 		async void OnFetchDataTap (object sender, EventArgs e)
 		{
-			InitialiseChart ();
+			InitializeChart ();
 
 			BTProgressHUD.Show ("Fetching data");
 
@@ -68,14 +66,9 @@ namespace NorthwindSalesiOS
 
 		async Task<SalesByCategory> GetDataAsync ()
 		{
-<<<<<<< HEAD
-			var client = new ODataClient("http://services.odata.org/V3/Northwind/Northwind.svc/");
-			var salesByCategory = await client.For ("Sales_by_Categories").Top(15).OrderBy("ProductSales").FindEntriesAsync();
-=======
 			var salesByCategory = await client.For("Sales_by_Categories")
 				.Top (15).OrderBy ("ProductSales").FindEntriesAsync ();
->>>>>>> pr/1
-	
+
 			var saleByCtg = new SalesByCategory ();
 			foreach (var sale in salesByCategory) {
 				saleByCtg.ProductName.Add (NSObject.FromObject (sale ["ProductName"].ToString ()));
@@ -85,7 +78,7 @@ namespace NorthwindSalesiOS
 			return saleByCtg;
 		}
 
-		void InitialiseChart ()
+		void InitializeChart ()
 		{
 			// if chart was added previously, remove it from the view before constructing it with new values
 			if (chart != null)
