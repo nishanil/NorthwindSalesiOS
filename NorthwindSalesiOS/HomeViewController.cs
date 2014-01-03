@@ -87,7 +87,7 @@ namespace NorthwindSalesiOS
 
 		async Task<SalesByCategory> GetDataAsync()
 		{
-			var client = new ODataClient("http://services.odata.org/Northwind/Northwind.svc/");
+			var client = new ODataClient("http://services.odata.org/V3/Northwind/Northwind.svc/");
 			var salesByCategory = await client.For ("Sales_by_Categories").Top(15).OrderBy("ProductSales").FindEntriesAsync();
 	
 			SalesByCategory saleByCtg = new SalesByCategory();
