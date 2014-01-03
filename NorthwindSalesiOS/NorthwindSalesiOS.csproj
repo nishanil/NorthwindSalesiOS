@@ -101,6 +101,9 @@
     <Reference Include="IGChart">
       <HintPath>..\Components\InfragisticsNucliOS-2013.2\lib\ios\IGChart.dll</HintPath>
     </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -120,6 +123,11 @@
   <ItemGroup>
     <XamarinComponentReference Include="InfragisticsNucliOS">
       <Version>2013.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="btprogresshud">
+      <InstallationInProgress>True</InstallationInProgress>
+      <Version>1.8</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
