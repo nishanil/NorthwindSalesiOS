@@ -8,6 +8,7 @@ A simple demo to explain Infragistics NucliOS Data Visualization Controls. This 
 ## Requirement for building the project
 
 - Add Infragistics NucliOS Component from [Xamarin Component Store](http://components.xamarin.com/view/InfragisticsNucliOS)
+- Add BTProgressHUD component from [Xamarin Component Store](http://components.xamarin.com/view/btprogresshud)
 
 
 Have a question? Find me on twitter [@nishanil](http://twitter.com/NishAnil)
