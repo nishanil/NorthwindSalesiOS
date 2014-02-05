@@ -95,14 +95,14 @@
     <Reference Include="Simple.OData.Client.Core">
       <HintPath>libs\Simple.OData.Client.Core.dll</HintPath>
     </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
+    </Reference>
     <Reference Include="IG">
       <HintPath>..\Components\InfragisticsNucliOS-2013.2\lib\ios\IG.dll</HintPath>
     </Reference>
     <Reference Include="IGChart">
       <HintPath>..\Components\InfragisticsNucliOS-2013.2\lib\ios\IGChart.dll</HintPath>
-    </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

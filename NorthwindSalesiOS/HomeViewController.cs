@@ -66,16 +66,16 @@ namespace NorthwindSalesiOS
 
 		async Task<SalesByCategory> GetDataAsync ()
 		{
-			var salesByCategory = await client.For("Sales_by_Categories")
+			var salesData = await client.For("Sales_by_Categories")
 				.Top (15).OrderBy ("ProductSales").FindEntriesAsync ();
 
-			var saleByCtg = new SalesByCategory ();
-			foreach (var sale in salesByCategory) {
-				saleByCtg.ProductName.Add (NSObject.FromObject (sale ["ProductName"].ToString ()));
-				saleByCtg.ProductSales.Add (NSObject.FromObject (sale ["ProductSales"].ToString ()));
+			var salesByCategory = new SalesByCategory ();
+			foreach (var sale in salesData) {
+				salesByCategory.ProductName.Add (NSObject.FromObject (sale ["ProductName"].ToString ()));
+				salesByCategory.ProductSales.Add (NSObject.FromObject (sale ["ProductSales"].ToString ()));
 			}
 
-			return saleByCtg;
+			return salesByCategory;
 		}
 
 		void InitializeChart ()
@@ -90,6 +90,9 @@ namespace NorthwindSalesiOS
 		}
 	}
 
+	/// <summary>
+	/// Data Model
+	/// </summary>
 	public class SalesByCategory
 	{
 		public SalesByCategory ()
