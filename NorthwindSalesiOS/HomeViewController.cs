@@ -38,9 +38,10 @@ namespace NorthwindSalesiOS
 			var data = await GetDataAsync ();
 
 			// set data source
-			var barSeriesSource = new IGCategorySeriesDataSourceHelper ();
-			barSeriesSource.Values = data.ProductSales.ToArray ();
-			barSeriesSource.Labels = data.ProductName.ToArray ();
+			var categorySeriesSource = new IGCategorySeriesDataSourceHelper ();
+			categorySeriesSource.Values = data.ProductSales.ToArray ();
+			categorySeriesSource.Labels = data.ProductName.ToArray ();
+
 
 			// Create axis types and add it to the chart
 			var xAxisBar = new IGNumericXAxis ("xAxis");
@@ -56,9 +57,29 @@ namespace NorthwindSalesiOS
 			barSeries.YAxis = yAxisBar;
 
 			// set the appropriate data sources
-			barSeries.DataSource = barSeriesSource;
+			barSeries.DataSource = categorySeriesSource;
 			chart.AddSeries (barSeries);
 
+			/* //TODO: Comment the above bar series code and UnComment the below code for column series
+
+			// Create axis types and add it to the chart
+			var xAxisBar = new IGCategoryXAxis ("xAxis");
+			var yAxisBar = new IGNumericYAxis ("yAxis");
+			yAxisBar.LabelAlignment = IGHorizontalAlign.IGHorizontalAlignRight;
+
+			chart.AddAxis (xAxisBar);
+			chart.AddAxis (yAxisBar);
+
+			// decide on what series need to be displayed on the chart
+			var columnSeries = new IGColumnSeries ("series");
+			columnSeries.XAxis = xAxisBar;
+			columnSeries.YAxis = yAxisBar;
+
+			// set the appropriate data sources
+			columnSeries.DataSource = categorySeriesSource;
+			chart.AddSeries (columnSeries);
+
+			*/
 			BTProgressHUD.Dismiss ();
 
 
